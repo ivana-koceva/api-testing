@@ -66,6 +66,7 @@ public class TagServiceImplementation implements TagService {
             logger.error("TagService - update error - Tag Not Found");
             return new TagNotFoundException();
         });
+        tag.setName(tagDTO.getName());
         tagRepository.save(tag);
         return tagDTO;
     }
